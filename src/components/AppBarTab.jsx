@@ -1,6 +1,8 @@
 import { Pressable, StyleSheet } from 'react-native';
 import { Link } from "react-router-native";
+
 import Text from './Text';
+import SignOut from './SignOut';
 
 const styles = StyleSheet.create({
   tab: {
@@ -10,10 +12,16 @@ const styles = StyleSheet.create({
   tabText: {
     color: 'white',
     fontSize: 16,
-  },
+  }
 });
 
 const AppBarTab = ({ label, to }) => {
+
+  if (label === "Sign out") {
+    return (
+      <SignOut styles={styles} />
+    )
+  }
 
   return (
     <Pressable style={styles.tab} >

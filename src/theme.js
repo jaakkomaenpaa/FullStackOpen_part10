@@ -26,7 +26,7 @@ const theme = {
   },
   appBar: {
     backgroundColor: '#24292e'
-  }
+  },
 };
 
 export default theme;

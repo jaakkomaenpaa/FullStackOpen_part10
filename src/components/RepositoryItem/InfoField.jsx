@@ -14,7 +14,8 @@ const styles = StyleSheet.create({
   fullInfoContainer: {
     display: 'flex',
     flexDirection: 'row',
-    alignItems: 'flex-start'
+    alignItems: 'flex-start',
+
   },
   textBackGround: {
     backgroundColor: theme.colors.primary,

@@ -1,16 +1,6 @@
-import { TextInput as NativeTextInput, StyleSheet } from 'react-native';
+import { TextInput as NativeTextInput } from 'react-native';
 
-const styles = StyleSheet.create({
-  container: {
-    borderWidth: 1,
-    borderColor: 'gray',
-    paddingHorizontal: 10
-  },
-  errorText: {
-    
-  }
-});
-
+// eslint-disable-next-line no-unused-vars
 const TextInput = ({ style, error, isPassword, ...props }) => {
   const textInputStyle = [style];
   return <NativeTextInput style={textInputStyle} secureTextEntry={isPassword} {...props} />;
