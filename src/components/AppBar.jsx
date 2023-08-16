@@ -12,7 +12,6 @@ const styles = StyleSheet.create({
     backgroundColor: theme.appBar.backgroundColor,
     flexDirection: 'row',
   },
-  // ...
 });
 
 const AppBar = () => {
@@ -26,7 +25,10 @@ const AppBar = () => {
     <View style={styles.container}>
       <ScrollView horizontal>
         <AppBarTab label ="Repositories" to="/" />
+        <AppBarTab label ="Create a review" to="/review" />
+        {loggedUser ? <AppBarTab label="My reviews" to="/my-reviews"></AppBarTab> : null}
         <AppBarTab label={loggedUser ? "Sign out" : "Sign in"} to="/sign-in"></AppBarTab> 
+        {!loggedUser ? <AppBarTab label="Sign up" to="/sign-up"></AppBarTab> : null}
       </ScrollView>
     </View>
   );

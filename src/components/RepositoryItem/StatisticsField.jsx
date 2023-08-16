@@ -31,7 +31,7 @@ const StatisticsField = ({ item }) => {
   })
 
   return (
-    <View style={styles.flexContainer}>
+    <View testID='statisticsField' style={styles.flexContainer}>
       <Statistic header='Stars' number={counts.stars} />
       <Statistic header='Forks' number={counts.forks} />
       <Statistic header='Reviews' number={counts.reviews} />

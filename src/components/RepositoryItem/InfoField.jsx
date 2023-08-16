@@ -4,8 +4,6 @@ import Text from '../Text';
 
 const styles = StyleSheet.create({
   image: {
-    marginTop: 15,
-    marginLeft: 15,
     marginRight: 5,
     borderRadius: 5,
     width: 40,
@@ -15,7 +13,6 @@ const styles = StyleSheet.create({
     display: 'flex',
     flexDirection: 'row',
     alignItems: 'flex-start',
-
   },
   textBackGround: {
     backgroundColor: theme.colors.primary,
@@ -26,20 +23,23 @@ const styles = StyleSheet.create({
     color: 'white'
   },
   infoText: {
-    marginBottom: 4
+    marginBottom: 4,
+    marginRight: 10,
   },
   infoTextContainer: {
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'flex-start',
-    margin: 15
+    marginBottom: 15,
+    marginRight: 15,
+    marginLeft: 15
   }
 })
 
 const InfoField = ({ item }) => {
 
   return (
-    <View style={styles.fullInfoContainer}>
+    <View testID='infoField' style={styles.fullInfoContainer}>
       <Image
         style={styles.image}
         source={{uri: item.ownerAvatarUrl}}

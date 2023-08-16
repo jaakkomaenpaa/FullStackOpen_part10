@@ -1,16 +1,24 @@
-import { useQuery } from '@apollo/client';
+import { useQuery } from '@apollo/client'
 
-import { GET_REPOSITORIES } from '../graphql/queries';
+import { GET_REPOSITORIES } from '../graphql/queries'
 
-const useRepositories = () => {
+const useRepositories = (order, filter) => {
 
-  // eslint-disable-next-line no-unused-vars
+  const [orderBy, orderDirection] = order.split('|')
+
   const { data, error, loading } = useQuery(GET_REPOSITORIES, {
-    fetchPolicy: 'cache-and-network'
-  });
-  const repositories = data?.repositories;
-  console.log(repositories)
-  return { repositories, loading };
-};
+    fetchPolicy: 'cache-and-network',
+    variables: {
+      orderBy: orderBy, 
+      orderDirection: orderDirection, 
+      searchKeyword: filter
+    }
+  })
+  if (error) {
+    console.error(error)
+  }
+  const repositories = data?.repositories
+  return { repositories, loading }
+}
 
-export default useRepositories;
+export default useRepositories
